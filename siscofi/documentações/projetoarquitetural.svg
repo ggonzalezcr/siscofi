@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2226"
+   sodipodi:version="0.32"
+   inkscape:version="0.45"
+   width="536"
+   height="272"
+   version="1.0"
+   sodipodi:docbase="/home/rodrigol/workspace/siscofi/etc"
+   sodipodi:docname="projetoarquitetural.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   sodipodi:modified="true">
+  <metadata
+     id="metadata2231">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2229">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2332">
+      <stop
+         style="stop-color:#00ff00;stop-opacity:1;"
+         offset="0"
+         id="stop2334" />
+      <stop
+         style="stop-color:#00ff00;stop-opacity:0;"
+         offset="1"
+         id="stop2336" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2332"
+       id="linearGradient2338"
+       x1="643.5874"
+       y1="-42.749481"
+       x2="641.44263"
+       y2="1.2500331"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2332"
+       id="linearGradient2203"
+       gradientUnits="userSpaceOnUse"
+       x1="643.5874"
+       y1="-42.749481"
+       x2="641.44263"
+       y2="1.2500331" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-height="700"
+     inkscape:window-width="1024"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:zoom="1.3656716"
+     inkscape:cx="344.38813"
+     inkscape:cy="134.08208"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:current-layer="svg2226"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <rect
+     style="fill:#d4aa00;fill-opacity:1"
+     id="rect2235"
+     width="208.68852"
+     height="191.11475"
+     x="430.92349"
+     y="21.573774"
+     ry="18.506187" />
+  <image
+     xlink:href="/home/rodrigol/Desktop/siscofi/images/projetoarquitetural.png"
+     sodipodi:absref="/home/rodrigol/Desktop/siscofi/images/projetoarquitetural.png"
+     width="536"
+     height="272"
+     id="image2233"
+     x="-2.1967151"
+     y="0.53551978" />
+  <rect
+     style="fill:#000000;fill-opacity:1"
+     id="rect2342"
+     width="2.0999999"
+     height="49.792351"
+     x="581.39893"
+     y="63.311474"
+     ry="1.4644809" />
+  <rect
+     style="fill:#000000;fill-opacity:1"
+     id="rect2344"
+     width="2.0999999"
+     height="49.792351"
+     x="581.39886"
+     y="123.3552"
+     ry="1.4644809" />
+  <g
+     id="g2301"
+     transform="matrix(0.910828,0,0,0.8846154,155.01113,238.32703)">
+    <rect
+       ry="19.038252"
+       y="-79.47541"
+       x="416.27869"
+       height="38.076504"
+       width="114.96175"
+       id="rect2279"
+       style="fill:#00ff00;fill-opacity:1" />
+    <a
+       transform="translate(-77.983605,-46.863388)"
+       id="a2281">
+      <text
+         xml:space="preserve"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="503.78143"
+         y="-10.644809"
+         id="text2283"><tspan
+           sodipodi:role="line"
+           id="tspan2285"
+           x="503.78143"
+           y="-10.644809">Coleta de dados</tspan></text>
+    </a>
+  </g>
+  <g
+     id="g2309"
+     transform="matrix(0.9171975,0,0,0.8846154,293.32625,168.20872)">
+    <rect
+       ry="19.038252"
+       y="-75.08197"
+       x="259.2131"
+       height="38.076504"
+       width="114.96175"
+       id="rect2259"
+       style="fill:#00ff00;fill-opacity:1" />
+    <a
+       transform="translate(-223.33333,-42.469945)"
+       id="a2265">
+      <text
+         xml:space="preserve"
+         style="font-size:12px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="536.73224"
+         y="-17.234972"
+         id="text2261"><tspan
+           sodipodi:role="line"
+           id="tspan2263"
+           x="538.6424"
+           y="-17.234972">Análise de </tspan><tspan
+           id="tspan2307"
+           sodipodi:role="line"
+           x="536.73224"
+           y="-2.234972">Dados</tspan></text>
+    </a>
+  </g>
+  <g
+     id="g2295"
+     transform="matrix(0.8535032,0,0,0.8653846,37.58681,103.6013)">
+    <rect
+       ry="19.038252"
+       y="-81.672134"
+       x="583.96173"
+       height="38.076504"
+       width="114.96175"
+       id="rect2287"
+       style="fill:url(#linearGradient2203);fill-opacity:1" />
+    <a
+       transform="translate(101.4153,-49.060109)"
+       id="a2289">
+      <text
+         xml:space="preserve"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="503.78143"
+         y="-10.644809"
+         id="text2291"><tspan
+           sodipodi:role="line"
+           id="tspan2293"
+           x="503.78143"
+           y="-10.644809">Console TRE</tspan></text>
+    </a>
+  </g>
+</svg>
