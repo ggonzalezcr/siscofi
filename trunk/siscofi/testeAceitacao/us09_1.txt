@@ -1,0 +1,53 @@
+#
+# Este arquivo é parte do programa Siscofi
+# 
+# Siscofi é um software livre; você pode redistribui-lo e/ou
+# modificá-lo dentro dos termos da Licença Pública Geral GNU como
+# publicada pela Fundação do Software Livre (FSF); na versão 3 da
+# Licença.
+# 
+# Este programa é distribuído na esperança que possa ser útil,
+# mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÂO a qualquer
+# MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
+# Licença Pública Geral GNU para maiores detalhes.
+#
+# Você deve ter recebido uma cópia da Licença Pública Geral GNU
+# junto com este programa, se não, escreva para a Fundação do Software
+# Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+# 
+# Copyright 2007, 2008 Carlos Trajano de Oliveira, Hamon Barros Henriques, Rodrigo Lopes da Silva
+#
+####Projeto siscofi ##########################################
+####teste de aceitação do US09 ###############################
+
+##Alterar a mensagem
+setMensagem mensagem="Mensagem1"
+expect "Mensagem" getMensagem
+
+##Alterar a cor da Mensagem
+setCorMensagem cor="AZUL1"
+expect "AZUL1" getCorMensagem
+
+##Alterar a velocidade da mensagem
+setSpeedMensagem speed=1000
+expect 1000 getSpeedMensagem
+
+##Alterar o intervalo de tempo da mensagem
+setIntervalMensagem interval=15000
+expect 15000 getIntervalMensagem
+
+##Alterar para nao mostrar ou mostrar o relógio
+setShowClock showClock=1
+expect 1 getShowClock
+
+##Alterar a posição do relógio no painel
+setClockPosition clockPosition="direita"
+expect "direita" getClockPosition
+
+##Alterar o número de repetições da mensagem
+setRepeat repeat=3
+expect 3 getRepeat
+
+##Alterar a cor de fundo do painel
+setBgColor bgColor="BRANCO"
+expect "BRACO" getBgColor
