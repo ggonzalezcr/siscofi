@@ -1,0 +1,154 @@
+CREATE TABLE controle
+(
+  classe character varying(255) NOT NULL,
+  cor character varying(255),
+  prefixo character varying(3) NOT NULL,
+  quantidade integer NOT NULL,
+  quantidadeinicial integer NOT NULL,
+  ultimasenha integer NOT NULL,
+  ultimoguiche character varying(255),
+  CONSTRAINT controle_pkey PRIMARY KEY (classe)
+);
+
+/* -------------------------------------------*/
+
+CREATE TABLE avaliacao
+(
+  data timestamp without time zone NOT NULL,
+  resposta1 character varying(255),
+  resposta2 character varying(255),
+  resposta3 character varying(255),
+  resposta4 character varying(255),
+  resposta5 character varying(255),
+  resposta6 character varying(8192),
+  resposta7 character varying(8192),
+  CONSTRAINT avaliacao_pkey PRIMARY KEY (data)
+);
+
+/* -------------------------------------------*/
+
+CREATE TABLE "login"
+(
+  "login" character varying(255) NOT NULL,
+  guiche character varying(255),
+  "password" character varying(255),
+  CONSTRAINT login_pkey PRIMARY KEY ("login")
+);
+
+/* -------------------------------------------*/
+
+CREATE TABLE status
+(
+  id character varying(255) NOT NULL,
+  isstarted boolean NOT NULL,
+  CONSTRAINT status_pkey PRIMARY KEY (id)
+); 
+
+/* -------------------------------------------*/
+
+CREATE TABLE dadosatendimento
+(
+  data timestamp without time zone NOT NULL,
+  tempomedio double precision NOT NULL,
+  totalatendimentos integer NOT NULL,
+  CONSTRAINT dadosatendimento_pkey PRIMARY KEY (data)
+);
+
+CREATE TABLE atendenteatendimentos
+(
+  id_atendente timestamp without time zone NOT NULL,
+  atendimentos integer,
+  mapkey character varying(255) NOT NULL,
+  CONSTRAINT atendenteatendimentos_pkey PRIMARY KEY (id_atendente, mapkey),
+  CONSTRAINT fk6dd622653ac09072 FOREIGN KEY (id_atendente)
+      REFERENCES dadosatendimento (data) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE classeatendimentos
+(
+  id_classe timestamp without time zone NOT NULL,
+  atendimentos integer,
+  mapkey character varying(255) NOT NULL,
+  CONSTRAINT classeatendimentos_pkey PRIMARY KEY (id_classe, mapkey),
+  CONSTRAINT fkfa81733016a1e385 FOREIGN KEY (id_classe)
+      REFERENCES dadosatendimento (data) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE guicheatendimentos
+(
+  id_guiche timestamp without time zone NOT NULL,
+  atendimentos integer,
+  mapkey integer NOT NULL,
+  CONSTRAINT guicheatendimentos_pkey PRIMARY KEY (id_guiche, mapkey),
+  CONSTRAINT fk9d126ac81df77f1d FOREIGN KEY (id_guiche)
+      REFERENCES dadosatendimento (data) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+/* -------------------------------------------------*/
+
+CREATE TABLE estatisticas
+(
+  data timestamp without time zone NOT NULL,
+  contagem integer NOT NULL,
+  CONSTRAINT estatisticas_pkey PRIMARY KEY (data)
+);
+
+CREATE TABLE estatisticaresposta
+(
+  id integer NOT NULL,
+  numpergunta integer NOT NULL,
+  pergunta character varying(255),
+  estatisticas_data timestamp without time zone,
+  CONSTRAINT estatisticaresposta_pkey PRIMARY KEY (id),
+  CONSTRAINT fk6624f457fa287b0f FOREIGN KEY (estatisticas_data)
+      REFERENCES estatisticas (data) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE estatisticas_respostas06
+(
+  estatisticas_data timestamp without time zone NOT NULL,
+  resposta06 character varying(8192),
+  CONSTRAINT fkf65f29b6fa287b0f FOREIGN KEY (estatisticas_data)
+      REFERENCES estatisticas (data) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE estatisticas_respostas07
+(
+  estatisticas_data timestamp without time zone NOT NULL,
+  resposta07 character varying(8192),
+  CONSTRAINT fkf65f29b7fa287b0f FOREIGN KEY (estatisticas_data)
+      REFERENCES estatisticas (data) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE contagemalternativas
+(
+  id_resposta integer NOT NULL,
+  contagemalternativa integer,
+  mapkey integer NOT NULL,
+  CONSTRAINT contagemalternativas_pkey PRIMARY KEY (id_resposta, mapkey),
+  CONSTRAINT fkac204f8a740b16 FOREIGN KEY (id_resposta)
+      REFERENCES estatisticaresposta (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE mapaestatisticaresposta
+(
+  estatisticas_resposta timestamp without time zone NOT NULL,
+  mapaestatisticaresposta_id integer NOT NULL,
+  mapkey integer NOT NULL,
+  CONSTRAINT mapaestatisticaresposta_pkey PRIMARY KEY (estatisticas_resposta, mapkey),
+  CONSTRAINT fk3d2c8db246756186 FOREIGN KEY (estatisticas_resposta)
+      REFERENCES estatisticas (data) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk3d2c8db2e1e68c19 FOREIGN KEY (mapaestatisticaresposta_id)
+      REFERENCES estatisticaresposta (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT mapaestatisticaresposta_mapaestatisticaresposta_id_key UNIQUE (mapaestatisticaresposta_id)
+);
+

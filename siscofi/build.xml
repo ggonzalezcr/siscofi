@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." default="compila" name="SISCOFI">
+
+    <description>
+	Projeto 1, Professora Francilene
+	Build file para o Siscofi - Sistema de Controle de Filas
+    Carlos Trajano de Oliveira
+    Hamon Barros Henriques
+    Rodrigo Lopes
+    </description>
+<!-- =================== variaveis =================== -->
+
+	<property name="dist" value="../dist" />
+	<property name="source" value="${basedir}/src" />
+	<property name="lib" value="${basedir}/web/WEB-INF/lib/" />
+	<property name="war" value="appprojeto1-Siscofi.war" />
+	<property name="app" value="appprojeto1-Siscofi" />
+	<property name="classes" value="${basedir}/web/WEB-INF/classes" />
+	<property name="web" value="${basedir}/web" />
+	<property name="doc" value="${basedir}/doc" />
+
+<!-- =================== cria pastas =================== -->	
+	
+	<target name="init">
+		<echo>Iniciando deploy.</echo>
+		<mkdir dir="${classes}" />
+	</target>
+	
+<!-- ============= Apaga todos os .class do sistema ============== -->
+	
+	<target name="clean" depends="init">
+		<echo>Deletando arquivos .class do sistema.</echo>
+		<delete>
+			<fileset dir="${classes}" includes="**/*.class" />
+		</delete>
+	</target>
+
+	<path id="carlos.class.path">		
+		<pathelement path="${lib}/jstl.jar" />	
+		<pathelement path="${lib}/servlet.jar" />
+		<pathelement path="${lib}/standard.jar" />
+		<pathelement path="${lib}/xml-apis.jar" />
+	</path>
+	
+	
+<!-- =================== comando limpa =================== -->
+    <target name="limpa" description="Limpa todos os vestigios.">
+    	<echo message="Limpando..."/>
+        <delete dir="${classes}"/>
+    	<delete dir="${doc}"/>
+    </target>
+	
+<!-- =================== comando compila =================== -->
+    <target name="compila" description="Compila tudo que eh necessario.">
+    	<echo message="Compilando..."/>
+    	<delete dir="${classes}"/>
+    	<mkdir dir="${classes}"/>
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac classpath="	${lib}commons-chain-1.1.jar;${lib}commons-collections-2.1.1.jar;
+        	${lib}commons-digester-1.8.jar;     	${lib}commons-fileupload-1.1.1.jar;
+        	${lib}commons-io-1.2.jar;        	${lib}commons-logging-1.0.4.jar;
+        	${lib}commons-validator-1.3.1.jar;        	${lib}concurrent-1.3.2.jar;
+        	${lib}dom4j-1.6.1.jar;        	${lib}easyaccept.jar;
+        	${lib}ehcache-1.1.jar;        	${lib}hibernate3.jar;
+        	${lib}jdbc2_0-stdext.jar;        	${lib}jdom.jar;
+        	${lib}jmf.jar;        	${lib}jstl.jar;
+        	${lib}jta.jar;        	${lib}junit-3.8.1.jar;
+        	${lib}log4j-1.2.11.jar;        	${lib}postgresql-8.2-505.jdbc3.jar;
+        	${lib}servlet.jar;        	${lib}servlet-api.jar;
+        	${lib}standard.jar;        	${lib}standard-1.0.2.jar;
+        	${lib}struts-core-1.3.8.jar;${lib}struts-el-1.3.8.jar;
+            ${lib}struts-extras-1.3.8.jar;        	${lib}struts-faces-1.3.8.jar;
+        	${lib}struts-mailreader-dao-1.3.8.jar;        	${lib}struts-scripting-1.3.8.jar;
+        	${lib}struts-taglib-1.3.8.jar;        	${lib}struts-tiles-1.3.8.jar;
+        	${lib}activation.jar;        	${lib}ant-1.6.5.jar;
+        	${lib}ant-antlr-1.6.5.jar;        	${lib}ant-junit-1.6.5.jar;
+        	${lib}ant-launcher-1.6.5.jar;        	${lib}antlr-2.7.6rc1.jar;
+        	${lib}ant-swing-1.6.5.jar;        	${lib}asm.jar;
+        	${lib}asm-attrs.jar;        	${lib}c3p0-0.9.0.jar;
+        	${lib}cglib-2.1.3.jar;        	${lib}cleanimports.jar;
+        	${lib}connector.jar;        	${lib}dsn.jar;
+        	${lib}imap.jar;        	${lib}jaas.jar;
+        	${lib}jacc-1_0-fr.jar;        	${lib}jaxen-1.1-beta-7.jar;
+        	${lib}jboss-cache.jar;        	${lib}jboss-common.jar;
+        	${lib}jboss-jmx.jar;        	${lib}jboss-system.jar;
+        	${lib}jgroups-2.2.8.jar;        	${lib}junit.jar;
+        	${lib}mysql-connector-java-3.0.17-ga-bin.jar;        	${lib}oscache-2.1.jar;
+        	${lib}proxool-0.8.3.jar;        	${lib}swarmcache-1.0rc2.jar;
+        	${lib}syndiag2.jar;        	${lib}versioncheck.jar;
+        	${lib}xerces-2.6.2.jar;        	${lib}xml-apis.jar;
+        	${lib}antlr-2.7.6.jar;        	${lib}c3p0-0.9.1.jar;
+        	${lib}checkstyle-all.jar;        	${lib}ehcache-1.2.3.jar;
+        	${lib}ejb3-persistence.jar;        	${lib}hibernate-annotations.jar;
+        	${lib}hibernate-commons-annotations.jar;        	${lib}hibernate-validator.jar;
+        	${lib}javassist.jar;
+        	" srcdir="${source}" destdir="${classes}"/>
+    </target>
+	
+<!-- =================== cria o appprojeto1-Siscofi.jar =================== -->
+	<target name="jar" depends="compila">
+		<echo>Criando arquivo Siscofi.jar</echo>
+		<jar destfile="${lib}\appprojeto2-Siscofi.jar" basedir="${classes}"/>
+	</target>
+	
+<!-- =================== comando doc =================== -->
+    <target name="doc" description="Gera toda a documentacao das classes do sistema.">
+    	<echo message="Gerando a documentacao..."/>
+    	<delete dir="${doc}"/>
+    	<mkdir dir="${doc}"/>
+		<javadoc sourcepath="${source}" destdir="${doc}" packagenames="actions.*,controleChamada.*,
+			controller.*,database.*,exceptions.*,forms.*,util.*"/>
+    </target>
+		
+<!-- =================== Deploy =================== -->
+	<target name="all" depends="clean, init, compila, jar">
+		<echo>Deploy do sistema</echo>
+	</target>
+
+	<target name="dist">
+		<mkdir dir="${dist}"/>
+	    <mkdir dir="${dist}/WEB-INF"/>
+	    <mkdir dir="${dist}/WEB-INF/classes"/>
+	    <mkdir dir="${dist}/WEB-INF/lib"/>
+	    <mkdir dir="${dist}/etc"/>
+		
+		<copy todir="${dist}">
+			<fileset dir="${web}">
+				<include name="*.*"/>
+			</fileset>
+	    </copy>
+	    
+	  	<copy todir="${dist}/WEB-INF/classes">
+	      	<fileset dir="${web}/WEB-INF/classes">
+	       	 	<include name="**/*.*"/>
+	      	</fileset>
+	    </copy> 
+	  
+	  	<copy todir="${dist}/WEB-INF">
+	      	<fileset dir="${web}/WEB-INF">
+	       	 	<include name="*.*"/>
+	      	</fileset>
+	    </copy> 
+		
+		
+	    <copy todir="${dist}/WEB-INF/lib">
+	      	<fileset dir="${web}/WEB-INF/lib">
+	        	<include name="**/*.*"/>
+	      	</fileset>
+	    </copy>
+		
+	    <copy todir="${dist}/etc">
+	      	<fileset dir="${web}/etc">
+	        	<include name="**/*.*"/>
+	      	</fileset>
+	    </copy>
+		
+
+	</target>
+
+	<target name="deploy" depends="jar,dist" >
+		<delete file="${webapp}/${war}" failonerror="false" />
+		<delete dir="${webapp}/${app}" failonerror="false" />
+		<delete file="${war}" failonerror="false" />
+		<jar jarfile="${war}" basedir="${dist}"/>    
+	  	<copy file="${war}" todir="${webapp}"/>
+		<delete file="${war}" failonerror="false"/>
+	    <delete dir="${dist}" failonerror="false" />
+	</target>
+	
+	<target name="war" depends="jar, dist">
+		<delete file="${webapp}/${war}" failonerror="false" />
+		<delete dir="${webapp}/${app}" failonerror="false" />
+		<delete file="${war}" failonerror="false" />
+		<jar jarfile="${war}" basedir="${dist}"/>   
+	</target>
+	
+</project>
