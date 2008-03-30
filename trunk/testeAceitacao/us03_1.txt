@@ -1,0 +1,35 @@
+#
+# Este arquivo é parte do programa Siscofi
+# 
+# Siscofi é um software livre; você pode redistribui-lo e/ou
+# modificá-lo dentro dos termos da Licença Pública Geral GNU como
+# publicada pela Fundação do Software Livre (FSF); na versão 3 da
+# Licença.
+# 
+# Este programa é distribuído na esperança que possa ser útil,
+# mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÂO a qualquer
+# MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
+# Licença Pública Geral GNU para maiores detalhes.
+#
+# Você deve ter recebido uma cópia da Licença Pública Geral GNU
+# junto com este programa, se não, escreva para a Fundação do Software
+# Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+# 
+# Copyright 2007, 2008 Carlos Trajano de Oliveira, Hamon Barros Henriques, Rodrigo Lopes da Silva
+#
+####Projeto siscofi ##########################################
+####teste de aceitação do US03 ###############################
+resetBD
+createClasse nomeClasse="segunda via" prefixo="SGV" cor="FFFFFF" quantInicial=10
+inicializaSistema
+emiteSenha classe="segunda via" total=10
+addGuiche ip="127.0.0.1" guiche="01" controle="segunda via" atendente="José"
+expect "SGV 01" chamaProximo classe="segunda via" ip="127.0.0.1"
+expect "SGV 01" getUltimaSenhaChamada classe="segunda via"
+addGuiche ip="127.0.0.2" guiche="02" controle="segunda via" atendente="Maria"
+expect "SGV 02" chamaProximo classe="segunda via" ip="127.0.0.2" 
+expect "SGV 02" getUltimaSenhaChamada classe="segunda via"
+chamaNovamente ip="127.0.0.2" classe="segunda via" senha="SGV 02"
+removeGuiche ip="127.0.0.2"
+expect "SGV 02" getUltimaSenhaChamada classe="segunda via"
+chamarSenhaEspecifica ip="127.0.0.1" senha="SGV 01" classe="segunda via"

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0" class="java.beans.XMLDecoder"> 
+ <object class="database.bean.Formulario"> 
+  <void property="alternativas1"> 
+   <void index="0"> 
+    <string>péssima</string> 
+   </void> 
+   <void index="1"> 
+    <string>ruim</string> 
+   </void> 
+   <void index="2"> 
+    <string>razoável</string> 
+   </void> 
+   <void index="3"> 
+    <string>boa</string> 
+   </void> 
+   <void index="4"> 
+    <string>excelente</string> 
+   </void> 
+  </void> 
+  <void property="alternativas2"> 
+   <void index="0"> 
+    <string>com muita facilidade</string> 
+   </void> 
+   <void index="1"> 
+    <string>com facilidade</string> 
+   </void> 
+   <void index="2"> 
+    <string>estive meio perdido</string> 
+   </void> 
+   <void index="3"> 
+    <string>com dificuldade</string> 
+   </void> 
+   <void index="4"> 
+    <string>com muita dificuldade</string> 
+   </void> 
+  </void> 
+  <void property="alternativas3"> 
+   <void index="0"> 
+    <string>nenhum  conhecimento</string> 
+   </void> 
+   <void index="1"> 
+    <string>pouco</string> 
+   </void> 
+   <void index="2"> 
+    <string>algum</string> 
+   </void> 
+   <void index="3"> 
+    <string>muito</string> 
+   </void> 
+   <void index="4"> 
+    <string>total</string> 
+   </void> 
+  </void> 
+  <void property="alternativas4"> 
+   <void index="0"> 
+    <string>não sabia que precisava trazer documentos</string> 
+   </void> 
+   <void index="1"> 
+    <string>tinha ouvido falar de algum</string> 
+   </void> 
+   <void index="2"> 
+    <string>mais ou menos</string> 
+   </void> 
+   <void index="3"> 
+    <string>sabia, mas tinha alguma dúvida</string> 
+   </void> 
+   <void index="4"> 
+    <string>sabia de todos com segurança</string> 
+   </void> 
+  </void> 
+  <void property="alternativas5"> 
+   <void index="0"> 
+    <string>péssima</string> 
+   </void> 
+   <void index="1"> 
+    <string>ruim</string> 
+   </void> 
+   <void index="2"> 
+    <string>razoável</string> 
+   </void> 
+   <void index="3"> 
+    <string>boa</string> 
+   </void> 
+   <void index="4"> 
+    <string>excelente</string> 
+   </void> 
+  </void> 
+  <void property="questao1"> 
+   <string>O que você achou da cordialidade dos servidores que o atenderam desde que chegou aqui?</string> 
+  </void> 
+  <void property="questao2"> 
+   <string>Como você se deslocou  para os vários setores em que foi atendido?</string> 
+  </void> 
+  <void property="questao3"> 
+   <string>Os servidores que o atenderam demonstraram conhecimento do serviço?</string> 
+  </void> 
+  <void property="questao4"> 
+   <string>Quando saiu de casa, você já sabia quais os documentos que precisava trazer para receber o atendimento?</string> 
+  </void> 
+  <void property="questao5"> 
+   <string>A estrutura do local de atendimento (acessos, escadas, rampas , local espera, banheiros, guichê de atendimento, entrega de título, sistema de senhas, etc...)  lhe pareceu:</string> 
+  </void> 
+  <void property="questao6"> 
+   <string>O que foi melhor e pior no atendimento que você recebeu?</string> 
+  </void> 
+  <void property="questao7"> 
+   <string>Alguma ocorrência, sugestão, crítica ou reclamação que gostaria de deixar registrado?</string> 
+  </void> 
+ </object> 
+</java> 

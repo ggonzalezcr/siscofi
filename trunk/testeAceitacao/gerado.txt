@@ -1,0 +1,15 @@
+estatisticas entre 01/01/2000 e 31/12/2099
+ total de avaliacoes = 5
+Resultados:
+questao01: O que você achou da cordialidade dos servidores que o atenderam desde que chegou aqui?:
+  péssima: 20.00%, ruim: 0.00%, razoável: 20.00%, boa: 60.00%, excelente: 0.00%
+questao02: Como você se deslocou  para os vários setores em que foi atendido?:
+  com muita facilidade: 40.00%, com facilidade: 40.00%, estive meio perdido: 20.00%, com dificuldade: 0.00%, com muita dificuldade: 0.00%
+questao03: Os servidores que o atenderam demonstraram conhecimento do serviço?:
+  nenhum  conhecimento: 20.00%, pouco: 20.00%, algum: 20.00%, muito: 0.00%, total: 40.00%
+questao04: Quando saiu de casa, você já sabia quais os documentos que precisava trazer para receber o atendimento?:
+  não sabia que precisava trazer documentos: 100.00%, tinha ouvido falar de algum: 0.00%, mais ou menos: 0.00%, sabia, mas tinha alguma dúvida: 0.00%, sabia de todos com segurança: 0.00%
+questao05: A estrutura do local de atendimento (acessos, escadas, rampas , local espera, banheiros, guichê de atendimento, entrega de título, sistema de senhas, etc...)  lhe pareceu::
+  péssima: 0.00%, ruim: 100.00%, razoável: 0.00%, boa: 0.00%, excelente: 0.00%
+respostas06=[Não sei, Não tenho certeza, ???, Talvez]
+respostas07=[Dúvido, ????, desconheço, Quem sabe]
