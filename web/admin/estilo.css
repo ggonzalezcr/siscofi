@@ -1,0 +1,109 @@
+/*
+ Este arquivo é parte do programa Siscofi
+ 
+ Siscofi é um software livre; você pode redistribui-lo e/ou
+ modificá-lo dentro dos termos da Licença Pública Geral GNU como
+ publicada pela Fundação do Software Livre (FSF); na versão 3 da
+ Licença.
+ 
+ Este programa é distribuído na esperança que possa ser útil,
+ mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÂO a qualquer
+ MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
+ Licença Pública Geral GNU para maiores detalhes.
+
+ Você deve ter recebido uma cópia da Licença Pública Geral GNU
+ junto com este programa, se não, escreva para a Fundação do Software
+ Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ 
+ Copyright 2007, 2008 Carlos Trajano de Oliveira, Hamon Barros Henriques, Rodrigo Lopes da Silva
+*/
+
+/* CSS Document */
+
+
+h1 {
+	font-size:18px;
+	text-align:center;
+}
+
+h2 {
+	font-size:16px;
+	text-align:center;
+}
+
+h3 {
+	color: #FF0000;
+	font-size:16px;
+	text-align:center;
+}
+
+.controle{
+	margin-left: 30px;
+}
+
+body{
+	font-size: 16px;
+	font-family:Arial, Helvetica, sans-serif;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.rodape {
+			clear: both;
+			padding: 5px;
+			background-color: rgb(213, 219, 225);
+		}
+
+	#container {
+			width: 760px;
+			\width: 780px;
+			w\idth: 760px;
+			border: 1px solid gray;
+			margin: 10px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px;
+		}
+
+	.b2{
+        font-size:12px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#638cb5;
+        border:0px;
+        height:19px;
+  }
+		
+		
+  .botao{
+        font-size:12px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#638cb5;
+        border:0px;
+        width:4cm;
+        height:19px;
+  }
+  
+   .botaoSecundario{
+        font-size:12px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#3299CC;
+        border:0px;
+        width:4cm;
+        height:19px;
+  }
+       
+
+  
+   .face{
+	  	font-size: 16px;
+		font-family:Arial, Helvetica, sans-serif;
+   }
+    

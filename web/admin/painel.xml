@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<painel><config refreshTime="250" intervalMensagem="15000000" clock="1" repeat="3" bgColor="BRANCO" posicao="120" nomeAplicacao="siscofi" speed="1000" tempoExibicao="500000" destacarUltimaSenha="1" exibirFundo="0" /><classes><classe guiche=" " senha="SUG 00" cor="FFFFFF" /></classes><chamada guiche="" avisar="0" cor="" senha="" /><mensagens><mensagem texto="Mensagem1" cor="AZUL1" /></mensagens></painel>

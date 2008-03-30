@@ -1,0 +1,39 @@
+#
+# Este arquivo é parte do programa Siscofi
+# 
+# Siscofi é um software livre; você pode redistribui-lo e/ou
+# modificá-lo dentro dos termos da Licença Pública Geral GNU como
+# publicada pela Fundação do Software Livre (FSF); na versão 3 da
+# Licença.
+# 
+# Este programa é distribuído na esperança que possa ser útil,
+# mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÂO a qualquer
+# MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
+# Licença Pública Geral GNU para maiores detalhes.
+#
+# Você deve ter recebido uma cópia da Licença Pública Geral GNU
+# junto com este programa, se não, escreva para a Fundação do Software
+# Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+# 
+# Copyright 2007, 2008 Carlos Trajano de Oliveira, Hamon Barros Henriques, Rodrigo Lopes da Silva
+#
+####Projeto siscofi ##########################################
+####teste de aceitação do US02 ###############################
+resetBD
+expect true inicializaSistema
+createClasse nomeClasse="2 via" prefixo="sug" cor="FFFFFF" quantInicial=0
+expect 0 getTotalSenhas classe="2 via" 
+expect "SUG 00" getUltimaSenhaChamada classe="2 via"
+emiteSenha classe="2 via" total=10
+expect 10 getTotalSenhas classe="2 via"
+expect "SUG 00" getUltimaSenhaChamada classe="2 via"
+createClasse nomeClasse="alistamento" prefixo="sug" cor="FFFFFF" quantInicial=0
+expect 0 getTotalSenhas classe="alistamento"
+expect "SUG 00" getUltimaSenhaChamada classe="alistamento"
+emiteSenha classe="2 via" total=1
+expect 11 getTotalSenhas classe="2 via"
+expect "SUG 00" getUltimaSenhaChamada classe="2 via"
+emiteSenha classe="2 via" total=1
+emiteSenha classe="2 via" total=1
+emiteSenha classe="2 via" total=1
+expect 14 getTotalSenhas classe="2 via"

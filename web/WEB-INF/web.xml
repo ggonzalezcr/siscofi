@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+ 
+   <!-- Standard Action Servlet Configuration (with debugging) -->
+   <display-name>SISCOFI</display-name>
+   
+ 	<servlet>
+                <servlet-name>action</servlet-name>
+                <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+                <init-param>
+                     <param-name>config</param-name>
+                     <param-value>/WEB-INF/struts-config.xml</param-value>
+                </init-param>
+                <init-param>
+                     <param-name>debug</param-name>
+                     <param-value>2</param-value>
+                </init-param>
+                <init-param>
+                     <param-name>detail</param-name>
+                     <param-value>2</param-value>
+                </init-param>
+                <load-on-startup>2</load-on-startup>
+	</servlet>
+
+  <!-- Standard Action Servlet Mapping -->
+	<servlet-mapping>
+                <servlet-name>action</servlet-name>
+                <url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- Implementação de segurança para o acesso a administração do sistema -->
+	<security-constraint>
+    	<web-resource-collection>
+        	<url-pattern>/adminBD.do</url-pattern>
+        	<url-pattern>/admImpressoras.do</url-pattern>
+        	<url-pattern>/adminClasses.do</url-pattern>
+        	<url-pattern>/confPainel.do</url-pattern>        	        	        	
+        	<url-pattern>/startFinish.do</url-pattern>        	        	        	        	        	        	        	        	        	
+        	<url-pattern>/atendimento.do</url-pattern>
+	       	<url-pattern>/configLogin.do</url-pattern>
+        	<url-pattern>/relatorio.do</url-pattern>
+        	<url-pattern>/configAvaliacao.do</url-pattern>
+        	<url-pattern>/admin/painel.jsp</url-pattern>        	        	        	        	        	        	
+	       	<url-pattern>/admin/painel.swf</url-pattern>        	        	        	        	        	        	
+        	<url-pattern>/admin/painel.xml</url-pattern>        	        	        	        	        	        	        	        	
+        	<url-pattern>/admin/sound.mp3</url-pattern>
+    	</web-resource-collection>
+    	<auth-constraint>
+        	<role-name>manager</role-name>
+    	</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+    	<auth-method>BASIC</auth-method>
+	    <realm-name>SISCOFI</realm-name>
+	</login-config>
+	
+
+  <!-- The timeout -->
+  	<session-config>
+		<session-timeout>300</session-timeout>
+	</session-config>
+	
+  <!-- The Usual Welcome File List -->
+  	<welcome-file-list>
+                <welcome-file>index.jsp</welcome-file>               
+    </welcome-file-list>
+
+   <!-- Struts Tag Library Descriptors -->
+         <taglib>
+                <taglib-uri>/tags/struts-bean</taglib-uri>
+                <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+                <taglib-uri>/tags/struts-html</taglib-uri>
+                <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+                <taglib-uri>/tags/struts-logic</taglib-uri>
+                <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+                <taglib-uri>/tags/struts-nested</taglib-uri>
+                <taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+			<taglib-uri>core</taglib-uri>
+			<taglib-location>/WEB-INF/c.tld</taglib-location>
+		</taglib>
+		
+		<taglib>
+			<taglib-uri>core-rt</taglib-uri>
+			<taglib-location>/WEB-INF/c-rt.tld</taglib-location>
+		</taglib>
+		
+</web-app>

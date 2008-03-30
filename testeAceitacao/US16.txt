@@ -1,0 +1,56 @@
+#
+# Este arquivo é parte do programa Siscofi
+# 
+# Siscofi é um software livre; você pode redistribui-lo e/ou
+# modificá-lo dentro dos termos da Licença Pública Geral GNU como
+# publicada pela Fundação do Software Livre (FSF); na versão 3 da
+# Licença.
+# 
+# Este programa é distribuído na esperança que possa ser útil,
+# mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÂO a qualquer
+# MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a
+# Licença Pública Geral GNU para maiores detalhes.
+#
+# Você deve ter recebido uma cópia da Licença Pública Geral GNU
+# junto com este programa, se não, escreva para a Fundação do Software
+# Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+# 
+# Copyright 2007, 2008 Carlos Trajano de Oliveira, Hamon Barros Henriques, Rodrigo Lopes da Silva
+#
+####Projeto siscofi ##########################################
+####teste de aceitação do US15 ###############################
+####US 15 trata da coleta de dados e análises estatísticas 
+####as avaliações realizadas sobre o atendimento
+
+##########Coleta de dados das avaliações
+resetBD
+expect true inicializaSistema
+createClasse nomeClasse="segunda via" prefixo="SGV" cor="FFFFFF" quantInicial=10
+addGuiche ip="127.0.0.1" guiche="01" controle="segunda via" atendente="José"
+addGuiche ip="127.0.0.2" guiche="02" controle="segunda via" atendente="José"
+setTempoMinimo tempo=0
+setTempoMaximo tempo=5
+setVariacao variacao=0.01
+expect "SGV 01" chamaProximo classe="segunda via" ip="127.0.0.1"
+expect "SGV 02" chamaProximo classe="segunda via" ip="127.0.0.2"
+expect "SGV 03" chamaProximo classe="segunda via" ip="127.0.0.1"
+expect "Resumo de 01/01/2000 à 31/12/2099, sendo realizados 1 atendimentos" getResultadoAtendimento inicio="01/01/2000" fim="31/12/2099"
+setTempoMinimo tempo=2.0
+setTempoMaximo tempo=16.0
+setVariacao variacao=0.5
+createClasse nomeClasse="2 via" prefixo="sug" cor="FFFFFF" quantInicial=0
+salvaAvaliacao resposta1="1" resposta2="3" resposta3="3" resposta4="1" resposta5="2" resposta6="???" resposta7="????"
+salvaAvaliacao resposta1="4" resposta2="2" resposta3="1" resposta4="1" resposta5="2" resposta6="Não sei" resposta7="????"
+salvaAvaliacao resposta1="3" resposta2="1" resposta3="2" resposta4="1" resposta5="2" resposta6="Talvez" resposta7="Quem sabe"
+salvaAvaliacao resposta1="4" resposta2="1" resposta3="5" resposta4="1" resposta5="2" resposta6="Não tenho certeza" resposta7="Dúvido"
+salvaAvaliacao resposta1="4" resposta2="2" resposta3="5" resposta4="1" resposta5="2" resposta6="???" resposta7="desconheço"
+#########Análise estatística
+getResultadosAvalicao inicio="01/01/2000" fim="31/12/2099" path="testeAceitacao/gerado.txt"
+equalFiles testeAceitacao/teste15_1.txt testeAceitacao/gerado.txt
+salvarDadosEntregaTitulo quant=75 tempoMedio=2.2
+finalizaSistema
+getResultadosAvalicao inicio="01/01/2000" fim="31/12/2099" path="testeAceitacao/gerado.txt"
+equalFiles  testeAceitacao/teste15_2.txt testeAceitacao/gerado.txt 
+getResultadosAvalicao inicio="01/01/2000" fim="31/12/2099" path="testeAceitacao/gerado.txt"
+equalFiles  testeAceitacao/teste15_2.txt testeAceitacao/gerado.txt 
+salvarDadosEntregaTitulo quant=12 tempoMedio=2.2

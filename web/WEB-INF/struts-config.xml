@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+
+<struts-config>
+	<form-beans>
+		<form-bean name="EmissaoForm" type="forms.EmissaoForm"/>
+		<form-bean name="ClasseForm" type="forms.ClasseForm"/>
+		<form-bean name="ChamaSenhaForm" type="forms.ChamaSenhaForm"/>
+		<form-bean name="ConfiguracaoPainelForm" type="forms.ConfiguracaoPainelForm"/>
+		<form-bean name="ConfiguracaoBDForm" type="forms.ConfiguracaoBDForm"/>
+		<form-bean name="FormularioForm" type="forms.FormularioForm"/>
+		<form-bean name="EstatisticasForm" type="forms.EstatisticasForm"/>
+		<form-bean name="ConfigAvaliacaoForm" type="forms.ConfigAvaliacaoForm"/>
+		<form-bean name="EntregaTituloForm" type="forms.EntregaTituloForm"/>
+		<form-bean name="ChamadaForm" type="forms.ChamadaForm"/>
+		<form-bean name="TempoAvaliacaoForm" type="forms.TempoAvaliacaoForm"/>
+		<form-bean name="MonitoramentoCentralForm" type="forms.MonitoramentoCentralForm"/>
+		<form-bean name="ConfigLoginForm" type="forms.ConfigLoginForm"/>
+	</form-beans>
+	
+	<global-forwards>
+        <forward name="index" path="/index.jsp"/>
+    </global-forwards>
+	
+	<action-mappings>
+    
+    	<action path="/chamada" 
+				scope="request"
+				name="ChamadaForm" 
+				type="actions.ChamadaAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="voltar" path="/admin/administracao.jsp"/>
+		</action>
+		
+		<action path="/configLogin" 
+				scope="request"
+				name="ConfigLoginForm" 
+				type="actions.ConfigLoginAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="voltar" path="/admin/administracao.jsp"/>
+				<forward name="alterarConfig" path="/admin/configLogin.jsp"/>
+				<forward name="encaminharConfig" path="/admin/configLogin.jsp"/>
+		</action>
+		
+		<action path="/monitoramento" 
+				scope="request"
+				name="MonitoramentoCentralForm" 
+				type="actions.MonitoramentoCentralAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="monitoramento" path="/admin/monitoramento.jsp"/>
+		</action>
+		
+		<action path="/atendimento" 
+				scope="request"
+				name="EstatisticasForm" 
+				type="actions.EstatisticasAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="encaminhaEstat" path="/admin/atendimento.jsp"/>
+				<forward name="voltar" path="/admin/administracao.jsp"/>
+				<forward name="erro" path="/admin/relatorios.jsp"/>
+				<forward name="encaminhaAdminEstat" path="/admin/adminEstatisticas.jsp"/>
+				<forward name="encaminhaEstatAtendimento" path="/admin/estatAtendimento.jsp"/>
+				<forward name="encaminhaEstatPreAtendimento" path="/admin/estatPreAtendimento.jsp"/>
+		</action>
+		
+		<action path="/configAvaliacao" 
+				scope="request"
+				name="ConfigAvaliacaoForm" 
+				type="actions.ConfigAvaliacaoAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="configAvaliacao" path="/admin/configAvaliacao.jsp"/>
+				<forward name="salvaConfig" path="/admin/configAvaliacao.jsp"/>
+				<forward name="voltar" path="/admin/administracao.jsp"/>
+		</action>
+		
+		<action path="/entregaTitulo" 
+				scope="request"
+				name="EntregaTituloForm"  
+				type="actions.EntregaTituloAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="salvo" path="/entregaTitulo.jsp"/>
+				<forward name="encaminhar" path="/entregaTitulo.jsp"/>
+				<forward name="coletaDados" path="/coletaDados.jsp"/>
+				<forward name="voltar" path="/index.jsp"/>
+		</action>
+		
+		<action path="/tempoAvaliacao" 
+				scope="request"
+				name="TempoAvaliacaoForm"  
+				type="actions.TempoAvaliacaoAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="salvo" path="/tempoAvaliacao.jsp"/>
+				<forward name="encaminhar" path="/tempoAvaliacao.jsp"/>
+				<forward name="coletaDados" path="/coletaDados.jsp"/>
+				<forward name="voltar" path="/index.jsp"/>
+		</action>
+		
+		<action path="/adminBD" 
+				scope="request"
+				name="ConfiguracaoBDForm" 
+				type="actions.AdminBDAction" 
+				parameter="metodo"	
+				validate="false" >
+				<forward name="voltar" path="/admin/adminBanco.jsp"/>
+				<forward name="voltarAdmin" path="/admin/administracao.jsp"/>
+				<forward name="encaminhaAdmin" path="/admin/adminBanco.jsp"/>
+				<forward name="encaminhaConfig" path="/admin/configuraBD.jsp"/>
+				<forward name="reset" path="/admin/adminBanco.jsp"/>
+				<forward name="alteraConfig" path="/admin/configuraBD.jsp"/>
+				<forward name="testaConexao" path="/admin/configuraBD.jsp"/>
+		</action>
+		
+		
+    
+		<action path="/emiteSenha" 
+				scope="request"
+				name="EmissaoForm" 
+				type="actions.EmiteSenhaAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="erro" path="/loginEmitir.jsp"/>
+				<forward name="emiteSenha" path="/emitirSenha.jsp"/>
+				<forward name="erroEmissao" path="/erroEmissao.jsp"/>
+		</action>
+		
+		<action path="/admImpressoras"
+				scope="request"
+				name="EmissaoForm" 
+				type="actions.AdmImpressoraAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="selecionaImpressora" path="/admin/selecionaImpressora.jsp"/>
+				<forward name="testeDeImpressao" path="/admin/testaImpressora.jsp"/>
+				<forward name="impressaoTestada" path="/admin/testaImpressora.jsp"/>
+				<forward name="voltar" path="/admin/administracao.jsp"/>
+		</action>
+		
+		<action path="/adminClasses" 
+				scope="request"
+				name="ClasseForm" 
+				type="actions.AdministrarClassesAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="criarClasse" path="/admin/adminClasses.jsp"/>
+				<forward name="alterarClasse" path="/admin/listagem.jsp"/>
+				<forward name="editarClasse" path="/admin/editarClasse.jsp"/>
+				<forward name="listarClasses" path="/admin/listagem.jsp"/>
+				<forward name="removerClasse" path="/admin/listagem.jsp"/>
+				<forward name="encaminhaCriacaoClasse" path="/admin/criarClasse.jsp"/>
+				<forward name="adminClasses" path="/admin/adminClasses.jsp"/>
+				<forward name="cancelar" path="/admin/adminClasses.jsp"/>
+				<forward name="voltar" path="/admin/administracao.jsp"/>
+		</action>
+		
+		<action path="/confPainel" 
+				scope="request"
+				name="ConfiguracaoPainelForm" 
+				type="actions.ConfigurarPainelAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="encaminha" path="/admin/GerenciarPainel.jsp"/>				
+				<forward name="salvar" path="/admin/GerenciarPainel.jsp"/>
+				<forward name="cancelar" path="/admin/administracao.jsp"/>
+				<forward name="restaurar" path="/admin/GerenciarPainel.jsp"/>
+		</action>
+		
+		<action path="/startFinish" 
+				scope="request"
+				name="ConfiguracaoPainelForm" 
+				type="actions.StartFinishAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="inicializa" path="/admin/administracao.jsp"/>				
+				<forward name="finaliza" path="/admin/administracao.jsp"/>
+				<forward name="voltar" path="/index.jsp"/>
+		</action>
+		
+		<action path="/chamaSenha"
+				scope="request" 
+				name="ChamaSenhaForm" 
+				input="/login.jsp"
+				type="actions.ChamarSenhaAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="erro" path="/loginChamar.jsp"/>				
+				<forward name="encaminha" path="/loginChamar.jsp"/>
+				<forward name="chamaSenha" path="/solicitacao.jsp"/>
+				<forward name="proximo" path="/solicitacao.jsp"/>
+				<forward name="proximoNovamente" path="/solicitacao.jsp"/>
+				<forward name="chamaSenha" path="/solicitacao.jsp"/>
+				<forward name="alterarControle" path="/solicitacao.jsp"/>
+				<forward name="logout" path="/loginChamar.jsp"/>
+		</action>
+
+		<action path="/avalia"
+				scope="request" 
+				name="FormularioForm" 
+				type="actions.AvaliacaoAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="encaminha" path="/avaliacao.jsp"/>
+				<forward name="salva" path="/formulario.jsp"/>				
+				<forward name="encaminhaAvaliacao" path="/formulario.jsp"/>				
+				<forward name="gerarPDF" path="/Questionario.pdf"/>				
+				<forward name="voltar" path="/index.jsp"/>				
+		</action>
+		
+		<action path="/relatorio"
+				scope="request" 
+				name="FormularioForm" 
+				type="actions.RelatorioAction" 
+				parameter="metodo"
+				validate="false" >
+				<forward name="encaminha" path="/admin/relatorios.jsp"/>
+				<forward name="encaminhaAvaliacao" path="/admin/relatorioAvaliacao.jsp"/>				
+				<forward name="avaliacao" path="/admin/relatorioAvaliacao.pdf"/>				
+				<forward name="voltar" path="/admin/relatorios.jsp"/>		
+				<forward name="voltarAdmin" path="/admin/administracao.jsp"/>			
+				<forward name="resultadosAvaliacao" path="/admin/resultadoAvaliacao.jsp"/>
+				<forward name="resultadosAtendimentos" path="/admin/relatorioAtendimento.jsp"/>
+				<forward name="encaminhaAtendimento" path="/admin/encaminhaAtendimento.jsp"/>
+				<forward name="atendimento" path="/admin/relatorioAvaliacao.pdf"/>				
+		</action>
+		
+						
+	</action-mappings>
+	
+	<!-- Arquivo de Mensagens -->
+	<message-resources parameter="MessageResources" />
+</struts-config>
