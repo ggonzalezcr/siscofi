@@ -1,0 +1,1 @@
+Um sistema web para automação no controle de atendimentos de usuários em um ambiente que utiliza fila.
